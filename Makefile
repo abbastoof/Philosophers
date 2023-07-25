@@ -1,26 +1,27 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    MAKEFILE                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: atoof <atoof@student.hive.fi>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/24 14:29:40 by atoof             #+#    #+#              #
-#    Updated: 2023/07/24 16:15:01 by atoof            ###   ########.fr        #
+#    Updated: 2023/07/25 18:02:11 by atoof            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = philo
 SRC_DIR = src/
-SRC = main.c checker.c ft_atoi.c
+SRC = main.c checker.c ft_atoi.c ft_isdigit.c init_data.c time_utils.c \
+		free_malloc.c
 SRCS = $(addprefix $(SRC_DIR), $(SRC))
 HEADER_DIR = header/
 HEADER = philo.h
 OBJ_DIR = obj/
 OBJS = $(SRCS:%.c=$(OBJ_DIR)%.o)
 FLAGS = -Wall -Werror -Wextra -g
-ERROR_FLAGS =  -fsanitize=address -static-libsan -g -fno-omit-frame-pointer -overflow
-EXTRA_FLAGS = 
+ERROR_FLAGS =  -fsanitize=address -static-libsan -fno-omit-frame-pointer -overflow
+EXTRA_FLAGS = -pthread
 
 # ANSI escape sequences for text formatting
 BOLD = \033[1m

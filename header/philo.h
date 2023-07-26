@@ -6,7 +6,7 @@
 /*   By: atoof <atoof@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 14:28:01 by atoof             #+#    #+#             */
-/*   Updated: 2023/07/25 17:27:48 by atoof            ###   ########.fr       */
+/*   Updated: 2023/07/26 18:13:17 by atoof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <sys/time.h>
+
+# define ERROR -1
+# define TRUE 1
+# define FALSE 0
 
 typedef struct s_gen_data
 {
@@ -47,5 +51,9 @@ int						checker(int argc, char **argv);
 int						ft_atoi(const char *str);
 int						ft_isdigit(int c);
 int						init_data(int argc, char **argv, t_gen_data *gen_data);
+int						create_threads(t_gen_data *philo);
+void					free_malloc(t_gen_data *gen_data);
+u_int64_t				get_time_micro(void);
+void					ft_usleep(u_int64_t time);
 
 #endif

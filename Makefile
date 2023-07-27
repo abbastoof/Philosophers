@@ -6,7 +6,7 @@
 #    By: atoof <atoof@student.hive.fi>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/24 14:29:40 by atoof             #+#    #+#              #
-#    Updated: 2023/07/27 15:12:15 by atoof            ###   ########.fr        #
+#    Updated: 2023/07/27 18:10:48 by atoof            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ HEADER_DIR = header/
 HEADER = philo.h
 OBJ_DIR = obj/
 OBJS = $(SRCS:%.c=$(OBJ_DIR)%.o)
-FLAGS = -Wall -Werror -Wextra -pthread #-fsanitize=thread
+FLAGS = -Wall -Werror -Wextra -pthread -o2 #-fsanitize=thread
 
 # ANSI escape sequences for text formatting
 BOLD = \033[1m

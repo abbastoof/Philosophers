@@ -6,7 +6,7 @@
 /*   By: atoof <atoof@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 13:11:12 by atoof             #+#    #+#             */
-/*   Updated: 2023/07/27 16:57:49 by atoof            ###   ########.fr       */
+/*   Updated: 2023/07/27 18:21:33 by atoof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,11 @@ static int	lifetime_philo(t_philo philo)
 	if ((get_time_micro() / 1000) - \
 		philo.last_meal >= philo.data->death_time)
 	{
+		check_finish(&philo, 1);
 		printf("%lld %d died\n", (get_time_micro() / 1000) \
 				- philo.data->start_time, philo.id);
-		check_finish(&philo, 1);
+		if (philo.data->philo_num == 1)
+			pthread_mutex_unlock(&philo.data->fork[0]);
 		pthread_mutex_unlock(&philo.data->eating);
 		return (1);
 	}

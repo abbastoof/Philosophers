@@ -6,17 +6,20 @@
 /*   By: atoof <atoof@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 11:18:33 by atoof             #+#    #+#             */
-/*   Updated: 2023/07/27 16:38:37 by atoof            ###   ########.fr       */
+/*   Updated: 2023/07/27 18:29:27 by atoof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	print_msg(t_philo *philo, char *msg)
+static void	print_msg(t_philo *philo, char *msg)
 {
-	if (check_finish(philo, 0))
-		return ;
 	pthread_mutex_lock(&philo->data->print);
+	if (check_finish(philo, 0))
+	{
+		pthread_mutex_unlock(&philo->data->print);
+		return ;
+	}
 	printf("%llu %d %s\n", (get_time_micro() / 1000) - philo->data->start_time, \
 			philo->id, msg);
 	pthread_mutex_unlock(&philo->data->print);

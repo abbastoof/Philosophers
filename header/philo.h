@@ -6,7 +6,7 @@
 /*   By: atoof <atoof@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 14:28:01 by atoof             #+#    #+#             */
-/*   Updated: 2023/07/26 18:13:17 by atoof            ###   ########.fr       */
+/*   Updated: 2023/07/27 16:31:28 by atoof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,13 @@ typedef struct s_gen_data
 	u_int64_t			eat_time;
 	u_int64_t			sleep_time;
 	int					meal_num;
+	int					max_eat;
+	int					must_exit;
 	u_int64_t			start_time;
 	pthread_t			*thread;
 	pthread_mutex_t		*fork;
 	pthread_mutex_t		print;
+	pthread_mutex_t		finish_mutex;
 	pthread_mutex_t		eating;
 	struct s_philo		*philo_info;
 }						t_gen_data;
@@ -54,6 +57,8 @@ int						init_data(int argc, char **argv, t_gen_data *gen_data);
 int						create_threads(t_gen_data *philo);
 void					free_malloc(t_gen_data *gen_data);
 u_int64_t				get_time_micro(void);
-void					ft_usleep(u_int64_t time);
+void					ft_usleep(t_philo *philo, u_int64_t time);
+int						monitoring(t_gen_data *data);
+int						check_finish(t_philo *philo, int exit_flag);
 
 #endif

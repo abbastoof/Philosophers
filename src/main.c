@@ -6,7 +6,7 @@
 /*   By: atoof <atoof@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 14:19:32 by atoof             #+#    #+#             */
-/*   Updated: 2023/07/26 15:16:25 by atoof            ###   ########.fr       */
+/*   Updated: 2023/07/27 13:10:28 by atoof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ int	main(int argc, char **argv)
 	if (init_data(argc, argv, &gen_data) == -1)
 		return (-1);
 	create_threads(&gen_data);
+	monitoring(&gen_data);
 	return (0);
 }

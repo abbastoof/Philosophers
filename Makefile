@@ -6,14 +6,14 @@
 #    By: atoof <atoof@student.hive.fi>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/24 14:29:40 by atoof             #+#    #+#              #
-#    Updated: 2023/07/26 17:32:20 by atoof            ###   ########.fr        #
+#    Updated: 2023/07/27 15:12:15 by atoof            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = philo
 SRC_DIR = src/
 SRC = main.c checker.c ft_atoi.c ft_isdigit.c init_data.c \
-		free_malloc.c create_threads.c time_utils.c
+		free_malloc.c create_threads.c time_utils.c monitoring.c
 SRCS = $(addprefix $(SRC_DIR), $(SRC))
 HEADER_DIR = header/
 HEADER = philo.h

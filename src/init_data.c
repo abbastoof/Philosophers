@@ -6,7 +6,7 @@
 /*   By: atoof <atoof@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 17:24:30 by atoof             #+#    #+#             */
-/*   Updated: 2023/07/26 17:19:46 by atoof            ###   ########.fr       */
+/*   Updated: 2023/07/27 15:08:34 by atoof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ static int	mutex_init(t_gen_data *gen_data)
 {
 	int	indx;
 
-	indx = 0;
-	while (++indx <= gen_data->philo_num)
+	indx = -1;
+	while (++indx < gen_data->philo_num)
 	{
 		if (pthread_mutex_init(&(gen_data->fork[indx]), NULL) != 0)
 		{
@@ -31,6 +31,11 @@ static int	mutex_init(t_gen_data *gen_data)
 		return (-1);
 	}
 	if (pthread_mutex_init(&(gen_data->eating), NULL) != 0)
+	{
+		printf("init mutex error\n");
+		return (-1);
+	}
+	if (pthread_mutex_init(&(gen_data->finish_mutex), NULL) != 0)
 	{
 		printf("init mutex error\n");
 		return (-1);
@@ -94,13 +99,15 @@ int	init_data(int argc, char **argv, t_gen_data *gen_data)
 		gen_data->meal_num = ft_atoi(argv[5]);
 	else
 		gen_data->meal_num = -1;
+	gen_data->max_eat = 0;
+	gen_data->must_exit = 0;
 	if (malloc_gen_data(gen_data) == -2)
 		return (-2);
+	init_philo_data(gen_data);
 	if (mutex_init(gen_data) == -1)
 	{
 		free_malloc(gen_data);
 		return (-1);
 	}
-	init_philo_data(gen_data);
 	return (0);
 }

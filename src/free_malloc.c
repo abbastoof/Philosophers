@@ -6,25 +6,25 @@
 /*   By: atoof <atoof@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 18:02:20 by atoof             #+#    #+#             */
-/*   Updated: 2023/07/27 18:37:31 by atoof            ###   ########.fr       */
+/*   Updated: 2023/07/28 13:23:39 by atoof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-static void	free_gen_data(t_gen_data *gen_data)
+void	free_gen_data(t_gen_data *gen_data)
 {
-	if (gen_data->thread)
+	if (gen_data->thread != NULL)
 	{
 		free(gen_data->thread);
 		gen_data->thread = NULL;
 	}
-	if (gen_data->fork)
+	if (gen_data->fork != NULL)
 	{
 		free(gen_data->fork);
 		gen_data->fork = NULL;
 	}
-	if (gen_data->philo_info)
+	if (gen_data->philo_info != NULL)
 	{
 		free(gen_data->philo_info);
 		gen_data->philo_info = NULL;

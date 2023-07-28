@@ -6,7 +6,7 @@
 /*   By: atoof <atoof@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 14:28:01 by atoof             #+#    #+#             */
-/*   Updated: 2023/07/27 16:31:28 by atoof            ###   ########.fr       */
+/*   Updated: 2023/07/28 20:09:09 by atoof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <sys/time.h>
-
-# define ERROR -1
-# define TRUE 1
-# define FALSE 0
 
 typedef struct s_gen_data
 {
@@ -60,5 +56,6 @@ u_int64_t				get_time_micro(void);
 void					ft_usleep(t_philo *philo, u_int64_t time);
 int						monitoring(t_gen_data *data);
 int						check_finish(t_philo *philo, int exit_flag);
+void					free_gen_data(t_gen_data *gen_data);
 
 #endif

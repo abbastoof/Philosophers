@@ -6,13 +6,11 @@
 /*   By: atoof <atoof@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 15:40:17 by atoof             #+#    #+#             */
-/*   Updated: 2023/07/25 14:16:34 by atoof            ###   ########.fr       */
+/*   Updated: 2023/07/28 20:09:31 by atoof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 static int	check_positive_num(int argc, char **argv)
 {

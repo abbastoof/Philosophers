@@ -6,7 +6,7 @@
 /*   By: atoof <atoof@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 14:19:32 by atoof             #+#    #+#             */
-/*   Updated: 2023/07/27 13:10:28 by atoof            ###   ########.fr       */
+/*   Updated: 2023/07/28 16:59:44 by atoof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int argc, char **argv)
 	(void)argv;
 	if (checker(argc, argv) == -1)
 		return (-1);
-	if (init_data(argc, argv, &gen_data) == -1)
+	if (init_data(argc, argv, &gen_data) < 0)
 		return (-1);
 	create_threads(&gen_data);
 	monitoring(&gen_data);

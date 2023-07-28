@@ -6,13 +6,13 @@
 /*   By: atoof <atoof@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 17:24:30 by atoof             #+#    #+#             */
-/*   Updated: 2023/07/27 15:08:34 by atoof            ###   ########.fr       */
+/*   Updated: 2023/07/28 17:42:36 by atoof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-static int	mutex_init(t_gen_data *gen_data)
+static int	init_fork(t_gen_data *gen_data)
 {
 	int	indx;
 
@@ -25,6 +25,13 @@ static int	mutex_init(t_gen_data *gen_data)
 			return (-1);
 		}
 	}
+	return (0);
+}
+
+static int	mutex_init(t_gen_data *gen_data)
+{
+	if (init_fork(gen_data) == -1)
+		return (-1);
 	if (pthread_mutex_init(&(gen_data->print), NULL) != 0)
 	{
 		printf("init mutex error\n");
@@ -106,7 +113,7 @@ int	init_data(int argc, char **argv, t_gen_data *gen_data)
 	init_philo_data(gen_data);
 	if (mutex_init(gen_data) == -1)
 	{
-		free_malloc(gen_data);
+		free_gen_data(gen_data);
 		return (-1);
 	}
 	return (0);

@@ -6,7 +6,7 @@
 #    By: atoof <atoof@student.hive.fi>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/24 14:29:40 by atoof             #+#    #+#              #
-#    Updated: 2023/07/27 18:10:48 by atoof            ###   ########.fr        #
+#    Updated: 2023/07/28 20:10:19 by atoof            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,4 +57,3 @@ fclean: clean
 	@echo "$(GREEN)$(BOLD)$(NAME) successfully cleaned!$(NC)"
 
 re: fclean all
-

@@ -1,3 +1,4 @@
+```markdown
 # Philosophers
 
 This project is an implementation of the dining philosophers problem using the pthreads library in C. Philosophers sit at a round table and do one of three things: eat, sleep, or think. While eating, they need two forks (one from their left and one from their right). The challenge is to avoid deadlock and make sure no philosopher starves.
@@ -36,18 +37,20 @@ After compilation, run the program as follows:
 
 - **philo.h**: Header file containing required includes, defines, and data structure definitions.
   
-- **checker.c**: Validates the arguments provided to the program.
-  
-- **actions.c**: Contains functions to perform philosopher's activities like eating, sleeping, and thinking.
+- **checker.c**: Contains functions to validate data.
 
-- **memory.c**: Contains functions to allocate and deallocate memory, initialize and destroy mutexes.
-  
-- **utils.c**: Utility functions including integer to ASCII conversion and digit checking.
-  
-- **init.c**: Initializes the program's data structures.
-  
-- **main.c**: Entry point of the program, setting up threads for each philosopher.
-  
-- **monitor.c**: Monitors the philosophers to check if they're alive or if they've eaten the required number of times.
+- **ft_atoi.c**: An implementation of the `atoi` function which converts a string to an integer.
 
-- **time.c**: Contains time-related utility functions.
+- **ft_isdigit.c**: A function to check if a character is a digit.
+  
+- **free_malloc.c**: Memory management functions related to dynamic memory allocation and deallocation.
+
+- **init_data.c**: Initializes data structures or values required for the program.
+
+- **create_threads.c**: Creates threads for parallel execution of tasks.
+
+- **monitoring.c**: Functions related to the oversight or management of threads or processes.
+
+- **time_utils.c**: Utility functions related to time.
+
+- **main.c**: Entry point to the program.

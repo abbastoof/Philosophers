@@ -9,7 +9,6 @@ This project is an implementation of the dining philosophers problem using the p
   - [Compilation](#compilation)
   - [Usage](#usage)
   - [Code Structure](#code-structure)
-  - [License](#license)
 
 ## Compilation
 

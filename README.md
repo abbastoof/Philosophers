@@ -6,17 +6,33 @@ This project is an implementation of the dining philosophers problem using the p
 
 - [Philosophers](#philosophers)
   - [Table of Contents](#table-of-contents)
-  - [Compilation](#compilation)
+  - [Compilation and Build](#compilation-and-build)
   - [Usage](#usage)
   - [Code Structure](#code-structure)
 
-## Compilation
+## Compilation and Build
 
-To compile, you'll need to have the `pthread` library installed on your system. Use the following command:
+The following commands can be used with the Makefile:
 
-```bash
-gcc -Wall -Wextra -Werror -pthread *.c -o philo
-```
+1. To compile and build the project:
+   ```bash
+   make
+   ```
+
+2. To remove all the object files:
+   ```bash
+   make clean
+   ```
+
+3. To remove all the object files and the binary:
+   ```bash
+   make fclean
+   ```
+
+4. To recompile the whole project:
+   ```bash
+   make re
+   ```
 
 ## Usage
 

@@ -69,5 +69,3 @@ After compilation, run the program as follows:
    - **monitoring.c**: Functions related to the oversight or management of threads or processes.
 
    - **time_utils.c**: Utility functions related to time.
-
-This should provide a clearer understanding for users who are familiar with using Makefiles.
